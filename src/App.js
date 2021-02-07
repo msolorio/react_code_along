@@ -1,20 +1,18 @@
 // import logo from './logo.svg';
 // import './App.css';
 import NavBar from './components/NavBar';
-import AllPosts from './components/AllPosts';
-import PostDetail from './components/PostDetail';
-import postData from './postData';
+import PostsPage from './pages/PostsPage';
+// import CreatePostPage from './pages/CreatePostPage';
+import postsData from './postData';
 
 function App() {
-  // console.log('****', postData);
+  // console.log('****', postsData);
   return (
     // <h1>My First App Component!</h1>
     <div className="container">
       <NavBar />
-      <div className="row">
-        <AllPosts allPosts={postData} />
-        <PostDetail post={postData[0]} />
-      </div>
+      <PostsPage allPosts={postsData} />
+      {/* <CreatePostPage /> */}
     </div>
   );
 }
