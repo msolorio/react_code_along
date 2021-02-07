@@ -1,15 +1,14 @@
-function PostDetail() {
+function PostDetail(props) {
+  console.log('*** props in PostDetail', props);
+
   return (
     <div className="col-md-6">
       <main className="card shadow-sm card-body">
-      <h2 className="mb-4">Tech Giants Battle</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis voluptatem, assumenda numquam quisquam a unde eius voluptas accusamus minus praesentium, facilis animi repudiandae. Non qui facilis debitis numquam nobis temporibus?</p>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis voluptatem, assumenda numquam quisquam a unde eius voluptas accusamus minus praesentium, facilis animi repudiandae. Non qui facilis debitis numquam nobis temporibus?</p>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis voluptatem, assumenda numquam quisquam a unde eius voluptas accusamus minus praesentium, facilis animi repudiandae. Non qui facilis debitis numquam nobis temporibus?</p>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis voluptatem, assumenda numquam quisquam a unde eius voluptas accusamus minus praesentium, facilis animi repudiandae. Non qui facilis debitis numquam nobis temporibus?</p>
+      <h2 className="mb-4">{props.post.postTitle}</h2>
+        <p>
+          <img className="float-left mr-4" src={props.post.imageUrl} alt=""/>
+          {props.post.postContent}
+        </p>
       </main>
     </div>
   )

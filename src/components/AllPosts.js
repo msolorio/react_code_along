@@ -1,13 +1,17 @@
-function AllPosts() {
+function AllPosts(props) {
+  // console.log('*** props in AllPosts', props);
+
+  function renderPosts(posts) {
+    return posts.map((post) => {
+      return <li className="card-body card mb-4" key={post.id}>{post.postTitle}</li>
+    });
+  }
+
   return (
     <div className="col-md-6 mb-4">
       <h2 className="mb-4">All Posts</h2>
       <ul>
-        <li className="card card-body mb-4 shadow-sm">Tech Giants Battle</li>
-        <li className="card card-body mb-4 shadow-sm">Adjust Privacy Settings on Your Apps</li>
-        <li className="card card-body mb-4 shadow-sm">Cool Tech Blog Post</li>
-        <li className="card card-body mb-4 shadow-sm">Cool Tech Blog Post</li>
-        <li className="card card-body mb-4 shadow-sm">Cool Tech Blog Post</li>
+        {renderPosts(props.allPosts)}
       </ul>
     </div>
   );
